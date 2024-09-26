@@ -1,6 +1,6 @@
 public class main {
     public static void main(String[] args) {
-        // code here
+        System.out.println("test");
     }
 
     public static void showSelection() {
