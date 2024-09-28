@@ -1,4 +1,4 @@
-// author:
+// author: Clarque Aloba
 
 public class DispenserType {
     private int numberOfItems;
@@ -13,6 +13,7 @@ public class DispenserType {
         cost = 50;
     }
 
+    // Initializes the dispenser by setting their item count and respective costs.
     public DispenserType(int setNoOfItems, int setCost) {
         if (setNoOfItems >= 0){
             numberOfItems = setNoOfItems;
@@ -30,7 +31,7 @@ public class DispenserType {
         if (numberOfItems > 0){
             numberOfItems--;
         } else {
-            // System.out.println("sold out"); 
+            System.out.println("Item Sold Out"); 
         }
     }
 
@@ -48,20 +49,23 @@ public class DispenserType {
             if (amount >= cost) {
                 numberOfItems--;
                 int change = amount - cost;
-                // System.out.println("Here drink, here change " + change);
+                  System.out.println("Your change is: " + change);
+                 System.out.println("Here's your drink! Enjoy!");
             } else {
-                // System.out.println("kuwang, tag " + cost + "mani");
+                 System.out.println("Insufficient Funds. Item Costs: " + cost);
+                 System.out.println("You currently have: " + amount);
+                 System.out.println((cost-amount) + " cents needed.");
             }
         } else {
-            // System.out.println("sold out");   
+             System.out.println("Item Sold Out");   
         }
     }
 
     // use productName() to display name of product along with stock and cost
     public static void displayProducts(DispenserType[] products) {
-        System.out.print("Products");
+        System.out.print("\nPRODUCTS: \n\n");
         for (int i = 0; i < products.length; i++){
-            System.out.println("Product " + (i + 1) + ": " + products[i].getNoOfItems() + "items, cost " + products[i].getCost());
+            System.out.println("Product " + (i + 1) + ": " + products[i].getNoOfItems() + " items || cost " + products[i].getCost());
         }
     }
 

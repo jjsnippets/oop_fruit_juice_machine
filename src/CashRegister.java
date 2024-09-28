@@ -1,4 +1,4 @@
-// author: 
+// author: Enzo Basuil
 
 public class CashRegister {
     private int cashOnHand;
@@ -7,10 +7,12 @@ public class CashRegister {
     // some methods are not used, remove as necessary
     // add comments as necessary
 
+    //Sets the value of cashOnHand to a certain value.
     public void setCurrentBalance(int newBalance){
         this.cashOnHand = newBalance;
     }
 
+    //Gets the value of cashOnHand and makes it accessible. 
     public int getCurrentBalance() {
         return this.cashOnHand;
     }
@@ -25,14 +27,17 @@ public class CashRegister {
         this.profit = 0;
     }
 
+    //Updates and increases the value of cashOnHand
     public void acceptAmount(int amountIn) {
         setCurrentBalance(getCurrentBalance() + amountIn);
     }
 
+    //Updates and decreases the value of cashOnHand
     public void reduceAmount(int amountOut) {
         setCurrentBalance(getCurrentBalance() - amountOut);
     }
 
+    //Shows the user their current balance.
     public static void displayBalance(CashRegister cashRegister) {
         System.out.println("Your current balance is: " + cashRegister.getCurrentBalance());
     }
@@ -42,8 +47,10 @@ public class CashRegister {
     public void incProfit(int amount) {
         this.profit += amount;
         // profit should also decrement machine credit
+        setCurrentBalance(getCurrentBalance() - amount);
     }
 
+    //This gets the value of profit and makes it accessible.
     public int getProfit() {
         return this.profit;
     }

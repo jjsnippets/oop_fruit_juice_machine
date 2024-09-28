@@ -1,7 +1,7 @@
 import java.util.Scanner;
 // author: Joshua Sarcol
 // contains main() method
-public class Main {
+public class main {
     static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -58,6 +58,9 @@ public class Main {
         int cost, stock;
 
         for (int i = 0; i < products.length; i++) {
+            //Would it be better if we said 'currently stocking' instead for the user to understand it better?
+            //System.out.println("Currently Stocking: " + DispenserType.productName(i));
+            
             System.out.println("[" + (i + 1) + "/4] " + DispenserType.productName(i));
             System.out.println("[a] Default values: cost -> 50, stock -> 50");
             System.out.println("[b] Custom values");
@@ -90,7 +93,7 @@ public class Main {
         char choice;
         System.out.println("=== Fruit Juice Machine ===");
         DispenserType.displayProducts(products);
-        System.out.println("[s] Display machine profit");
+        System.out.println("\n[s] Display machine profit");
         System.out.println("[e] Leave the machine");
         System.out.print(" >> ");
         choice = input.next().charAt(0);
