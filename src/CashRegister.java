@@ -1,28 +1,31 @@
+
 public class CashRegister {
     private int cashOnHand;
-
-    public CashRegister() {
-        // code here
-    }
-
-    public CashRegister(int cashIn) {
-        // code here
+    public void setCurrentBalance(int newBalance){
+        this.cashOnHand = newBalance;
     }
 
     public int getCurrentBalance() {
-        // code here
-        return 0;
+        return this.cashOnHand;
+    }
+
+    public CashRegister() {
+        setCurrentBalance(500);
+    }
+
+    public CashRegister(int cashIn) {
+        setCurrentBalance(cashIn);
     }
 
     public void acceptAmount(int amountIn) {
-        // code here
+        setCurrentBalance(getCurrentBalance() + amountIn);
     }
 
     public void reduceAmount(int amountOut) {
-        // code here
+        setCurrentBalance(getCurrentBalance() - amountOut);
     }
 
     public static void displayBalance(CashRegister cashRegister) {
-        // code here
+        System.out.println("Your current balance is: " + cashRegister.getCurrentBalance());
     }
 }

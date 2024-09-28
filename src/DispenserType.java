@@ -53,7 +53,7 @@ public class DispenserType {
     public static void displayProducts(DispenserType[] products) {
         System.out.print("Products");
         for (int i = 0; i < products.length; i++){
-            System.out.println("Product " + (i + 1) + ": " + products[i].getNoOfItems() + "items, cost " + products[i].getCost())
+            System.out.println("Product " + (i + 1) + ": " + products[i].getNoOfItems() + "items, cost " + products[i].getCost());
         }
     }
 }
