@@ -16,14 +16,14 @@ public class DispenserType {
     // Initializes the dispenser by setting their item count and respective costs.
     public DispenserType(int setNoOfItems, int setCost) {
         if (setNoOfItems >= 0){
-            numberOfItems = setNoOfItems;
+            this.numberOfItems = setNoOfItems;
         } else {
-            numberOfItems = 0; // no negatives
+            this.numberOfItems = 0; // no negatives
         }
         if (setCost >= 0) {
-            cost = setCost;
+            this.cost = setCost;
         } else {
-            cost = 0; // no negatives
+            this.cost = 0; // no negatives
         }
     }
 
@@ -65,7 +65,7 @@ public class DispenserType {
     public static void displayProducts(DispenserType[] products) {
         System.out.print("\nPRODUCTS: \n\n");
         for (int i = 0; i < products.length; i++){
-            System.out.println("Product " + (i + 1) + ": " + products[i].getNoOfItems() + " items || cost " + products[i].getCost());
+            System.out.println(productName(i) + ": " + products[i].getNoOfItems() + " items || cost " + products[i].getCost());
         }
     }
 
