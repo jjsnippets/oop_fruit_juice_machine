@@ -24,7 +24,6 @@ public class CashRegister {
 
     public CashRegister(int cashIn) {
         setCurrentBalance(cashIn);
-        this.profit = 0;
     }
 
     //Updates and increases the value of cashOnHand

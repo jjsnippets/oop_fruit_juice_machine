@@ -6,7 +6,7 @@ public class main {
 
     public static void main(String[] args) {
         // declarations and initializations
-        CashRegister credit = new CashRegister(0);
+        CashRegister credit = new CashRegister();
         DispenserType[] products = new DispenserType[4];
         char choice;
         boolean didSell;
@@ -109,6 +109,7 @@ public class main {
         // declarations
         int cost = product.getCost();
         int deposit, rem;
+        credit.reduceAmount(credit.getCurrentBalance());
 
         // The first thing that this function does is check whether the dispenser holding
         // the product is empty. If the dispenser is empty, the function informs the customer
@@ -123,7 +124,7 @@ public class main {
         System.out.println("You need to deposit " + cost + " to buy this product");
         System.out.print("How much to deposit? >> "); // first attempt
         deposit = input.nextInt();
-        credit = new CashRegister(deposit);
+        credit.acceptAmount(deposit);
         System.out.println();
 
         // If the user does not deposit enough money to buy the product, it tells the user
@@ -141,7 +142,7 @@ public class main {
             if (credit.getCurrentBalance() < cost) {
                 System.out.println("Sorry but you do not have enough credit!\n");
                 System.out.println("Returning " + credit.getCurrentBalance() + "...\n");
-                credit = new CashRegister(0);
+                credit.reduceAmount(credit.getCurrentBalance());
                 return false;
             }
         }
@@ -151,7 +152,7 @@ public class main {
         credit.incProfit(cost);
         product.makeSale();
         System.out.println("Returning " + credit.getCurrentBalance() + "...\n");
-        credit = new CashRegister(0);
+        credit.reduceAmount(credit.getCurrentBalance());
         return true;
     }
 }

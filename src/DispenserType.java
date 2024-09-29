@@ -63,9 +63,9 @@ public class DispenserType {
 
     // use productName() to display name of product along with stock and cost
     public static void displayProducts(DispenserType[] products) {
-        System.out.print("\nPRODUCTS: \n\n");
+        System.out.println("PRODUCTS:");
         for (int i = 0; i < products.length; i++){
-            System.out.println(productName(i) + ": " + products[i].getNoOfItems() + " items || cost " + products[i].getCost());
+            System.out.println("[" + (i + 1) + "] " + productName(i) + ": " + products[i].getNoOfItems() + " items || cost " + products[i].getCost());
         }
     }
 
