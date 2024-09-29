@@ -52,7 +52,7 @@ public class main {
 
     // initializes values for the dispensers / products
     public static void dispenserSetup(DispenserType[] products) {
-        System.out.println("=== Set-up ===");
+        System.out.println("\n=== Setting Up Products ===\n");
 
         char choice;
         int cost, stock;
@@ -64,7 +64,7 @@ public class main {
             System.out.println("[" + (i + 1) + "/4] " + DispenserType.productName(i));
             System.out.println("[a] Default values: cost -> 50, stock -> 50");
             System.out.println("[b] Custom values");
-            System.out.print(" >> ");
+            System.out.print("\nSelect Stock Values >> ");
 
             choice = input.nextLine().toLowerCase().charAt(0);
 
@@ -91,11 +91,12 @@ public class main {
     // displays the products and other options
     public static char showSelection(DispenserType[] products) {
         char choice;
-        System.out.println("=== Fruit Juice Machine ===");
+        System.out.println("=== Fruit Juice Machine ===\n");
         DispenserType.displayProducts(products);
-        System.out.println("\n[s] Display machine profit");
+        System.out.println("\nMACHINE OPERATIONS: ");
+        System.out.println("[s] Display machine profit");
         System.out.println("[e] Leave the machine");
-        System.out.print(" >> ");
+        System.out.print("\nInput choice >> ");
         choice = input.next().charAt(0);
 
         System.out.println();
