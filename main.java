@@ -9,7 +9,7 @@ public class main {
         CashRegister credit = new CashRegister();
         DispenserType[] products = new DispenserType[4];
         char choice;
-        boolean didSell;
+        boolean isSold;
 
         // set-up for the dispensers
         dispenserSetup(products);
@@ -29,8 +29,8 @@ public class main {
                 case '2':
                 case '3':
                 case '4':
-                    didSell = sellProduct(products[Character.getNumericValue(choice) - 1], credit);
-                    if (didSell){
+                    isSold = sellProduct(products[Character.getNumericValue(choice) - 1], credit);
+                    if (isSold){
                         System.out.println("You bought " + DispenserType.productName(Character.getNumericValue(choice) - 1) + "!");
                         System.out.println("Enjoy and thank you for your purchase!");
                     }  
